@@ -35,7 +35,9 @@ function App() {
   return (
     <div className = {classes.root} >
       <Router>
-            <Switch>
+           {
+             !user ? (<Login/>) : (
+              <Switch>
               <Route path="/login">
                 <Login/>
               </Route>
@@ -49,6 +51,8 @@ function App() {
                 <Home/>
               </Route>
             </Switch>
+             )
+           }
       </Router>
     </div>
   );
